@@ -1,0 +1,19 @@
+{
+  "system": "CORTEX-FAS v20 (Digital Twin)",
+  "mode": "adversarial stress simulation",
+  "case_topology": "iHelp-like donation + discount coupling",
+  "assumption_lattice": [
+    "100% contraprestation equivalence treated as linear correlation",
+    "Art. 16 Ley 49/2002 strict threshold enforcement applied",
+    "Zero de minimis tolerance modeled",
+    "AEAT agent mapped as maximal correlation seeker"
+  ],
+  "output_state": {
+    "regime_shift_likelihood": 0.8676,
+    "system_energy_spike": 0.3051,
+    "lyapunov_lambda_baseline": 0.0005,
+    "interpretation": "High sensitivity to reclassification rules detected under current state assumptions",
+    "dominant_driver": "Art16_threshold_constraint",
+    "note": "Result is conditional on rule strictness assumptions, NOT a legal prediction or assertion of factual wrongdoing."
+  }
+}
