@@ -4,7 +4,7 @@ import json
 from sqlalchemy import create_engine, Column, String, Integer, Float, DateTime, ForeignKey, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.dialects.postgresql import UUID, JSONB
+from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://cortexfas:cortexfas@db:5432/cortexfas")
@@ -25,6 +25,17 @@ class User(Base):
     requests_limit = Column(Integer, nullable=False, default=10)
     activated_at = Column(DateTime, nullable=True)
     last_request_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, nullable=False, server_default=text("NOW()"))
+
+class UsageLog(Base):
+    __tablename__ = "usage_logs"
+    
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    endpoint = Column(String(50), nullable=False)
+    energy_score = Column(Float, nullable=True)
+    lyapunov = Column(Float, nullable=True)
+    regime = Column(String(30), nullable=True)
     created_at = Column(DateTime, nullable=False, server_default=text("NOW()"))
 
 def get_db():
