@@ -5,60 +5,49 @@
 CORTEX-FAS is a computational framework for modeling **interpretative drift under adversarial assumption sets** in fiscal and regulatory systems.
 
 It simulates how legal interpretations evolve under:
-- internal precedent accumulation
-- external legislative shocks
-- threshold reconfiguration dynamics
+- internal precedent accumulation.
+- external legislative shocks.
+- threshold reconfiguration dynamics.
 
----
+## Core Principle
 
-## 🚨 Core Principle
+This system does **not**:
+- produce legal conclusions.
+- assign liability.
+- provide tax advice.
+- evaluate real-world compliance status.
 
-This system does NOT:
-- produce legal conclusions
-- assign liability
-- provide tax advice
-- evaluate real-world compliance status
+It **does**:
+- simulate structural sensitivity of legal interpretation.
+- model regime transitions under assumption perturbations.
+- compute abstract stability metrics over jurisprudential state spaces.
 
-It DOES:
-- simulate structural sensitivity of legal interpretation
-- model regime transitions under assumption perturbations
-- compute abstract stability metrics over jurisprudential state spaces
-
----
-
-## 🧠 Formal Core
+## Formal Core
 
 ### Juridical Energy Function (JEF)
 
-E_total = weighted sum of interpretative tension fields:
+`E_total` is a normalized scalar potential over interpretative tension fields, combining:
+- correlation pressure.
+- threshold variance.
+- doctrinal entropy.
+- precedent friction.
 
-- correlation pressure
-- threshold variance
-- doctrinal entropy
-- precedent friction
-
-Outputs are normalized scalar potentials ∈ [0,1].
-
----
+Outputs are normalized to the range `[0, 1]`.
 
 ### Lyapunov Proxy
 
 Measures sensitivity of interpretative systems to small perturbations:
 
-λ ≈ divergence rate of energy trajectories under epsilon shocks
-
----
+`λ ≈ divergence rate of energy trajectories under epsilon shocks`
 
 ### Regime Space
 
-- Stable Formalism
-- Interpretative Drift
-- Doctrinal Tension
-- Phase Transition (critical instability)
+- Stable Formalism.
+- Interpretative Drift.
+- Doctrinal Tension.
+- Phase Transition.
 
----
-
-## ⚠️ Adversarial Assumption Layer
+## Adversarial Assumption Layer
 
 All outputs are conditional on explicit assumption sets.
 
@@ -66,53 +55,42 @@ No assumption is treated as factual.
 
 All simulations are counterfactual by design.
 
----
+## Example Use Case
 
-## 🧪 Example Use Case
+**iHelp Stress Test** is a synthetic scenario used to evaluate:
+- coupling sensitivity between donation and service structures.
+- interpretative boundary behavior under strict enforcement assumptions.
 
-"iHelp Stress Test" is a synthetic scenario used to evaluate:
+This is **not** a real-world classification.
 
-- coupling sensitivity between donation and service structures
-- interpretative boundary behavior under strict enforcement assumptions
+## Architecture
 
-This is NOT a real-world classification.
+- `core/` — state machine + energy model.
+- `model/` — ontology + graph layer.
+- `api/` — simulation endpoints.
+- `dashboard/` — interpretability UI.
+- `case_studies/` — synthetic stress scenarios.
 
----
-
-## 🧱 Architecture
-
-- core/ → state machine + energy model
-- model/ → ontology + graph layer
-- api/ → simulation endpoints
-- dashboard/ → interpretability UI
-- case_studies/ → synthetic stress scenarios
-
----
-
-## 🧾 Output Philosophy
+## Output Philosophy
 
 All outputs are:
-- probabilistic
-- assumption-conditioned
-- non-normative
-- non-decisional
+- probabilistic.
+- assumption-conditioned.
+- non-normative.
+- non-decisional.
 
----
-
-## 🔒 Safety Boundary
+## Safety Boundary
 
 This system cannot be used as:
-- evidence in legal proceedings
-- compliance certification tool
-- tax determination engine
+- evidence in legal proceedings.
+- compliance certification tool.
+- tax determination engine.
 
-It is strictly a **research simulation environment**.
+It is strictly a research simulation environment.
 
----
-
-## 📊 Citation
+## Citation
 
 If used academically:
 
-CORTEX-FAS v6 — Adversarial Compliance Simulator
+**CORTEX-FAS v6 — Adversarial Compliance Simulator**  
 Borja Moskv (2026)
