@@ -20,6 +20,10 @@ app = FastAPI(
 # Apply Epistemic Firewall
 app.add_middleware(EpistemicFirewallMiddleware)
 
+# Integrate Stripe Webhook Router
+from api.webhook_handler import router as stripe_router
+app.include_router(stripe_router)
+
 class OutputContract(BaseModel):
     mode: str
     epistemic_status: str
