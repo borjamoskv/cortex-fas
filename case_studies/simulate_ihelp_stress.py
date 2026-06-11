@@ -71,8 +71,9 @@ def simulate_stress_test():
     
     # 5. Output reframed as Physics of Law (not legal judgement)
     report = {
-        "system": "CORTEX-FAS v20 (Digital Twin)",
+        "system": "CORTEX-FAS v6 (Digital Twin)",
         "mode": "adversarial stress simulation",
+        "epistemic_status": "counterfactual_simulation_only",
         "case_topology": "iHelp-like donation + discount coupling",
         "assumption_lattice": [
             "100% contraprestation equivalence treated as linear correlation",
@@ -80,10 +81,13 @@ def simulate_stress_test():
             "Zero de minimis tolerance modeled",
             "AEAT agent mapped as maximal correlation seeker"
         ],
-        "output_state": {
-            "regime_shift_likelihood": round(reclassification_likelihood, 4),
+        "simulation_output": {
+            "regime_shift_model_score": round(reclassification_likelihood, 4),
             "system_energy_spike": analysis["energy"]["E_total"],
             "lyapunov_lambda_baseline": analysis["lyapunov"]["lambda"],
+            "primary_sensitivity_axis": "DONORS (Declarantes IRPF)",
+            "secondary_sensitivity_axis": "NETWORK_PROMOTER",
+            "regime_signal": "Threshold overflow detected under strict assumptions.",
             "interpretation": "High sensitivity to reclassification rules detected under current state assumptions",
             "dominant_driver": "Art16_threshold_constraint",
             "note": "Result is conditional on rule strictness assumptions, NOT a legal prediction or assertion of factual wrongdoing."
